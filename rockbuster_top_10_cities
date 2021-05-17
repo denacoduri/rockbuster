@@ -19,17 +19,17 @@ LIMIT 10
 
 OUTPUT:
 		
-city	                 country	          customer_count
+city	               country	    	    customer_count
 Aurora	               United States	    2
-Acua	                 Mexico	            1
-Adana	                 Turkey	            1
+Acua	               Mexico	            1
+Adana	               Turkey	            1
 Adoni         	       India	            1
-Ahmadnagar	           India	            1
-Akishima	             Japan	            1
-Akron	                 United States	    1
-Allappuzha (Alleppey)	 India	            1
-Allende	               Mexico           	1
-Alvorada	             Brazil	            1
+Ahmadnagar	       India	            1
+Akishima	       Japan	            1
+Akron	               United States	    1
+Allappuzha (Alleppey)  India	            1
+Allende	               Mexico               1
+Alvorada	       Brazil	            1
 	
   
 *This information is not very useful. Although it gives us the top city,		
