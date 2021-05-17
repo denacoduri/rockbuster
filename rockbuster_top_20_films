@@ -1,0 +1,41 @@
+A SQL query to find the top 20 films by total payments
+
+
+QUERY:
+
+SELECT SUM(amount) AS total_payments, D.title AS film_name	
+	
+FROM payment A	
+INNER JOIN rental B ON A.rental_id = B.rental_id	
+INNER JOIN inventory C ON B.inventory_id = C.inventory_id	
+INNER JOIN film D ON C.film_id = D.film_id	
+	
+GROUP BY D.title	
+ORDER BY SUM(amount) DESC	
+LIMIT 20	
+	
+	
+	
+OUTPUT:
+
+total_payments	film_name
+215.75	        Telegraph Voyage
+199.72	        Zorro Ark
+198.73	        Wife Turn
+191.74	        Innocent Usual
+190.78	        Hustler Party
+190.74	        Saturday Lambs
+186.73	        Titans Jerk
+177.73	        Harry Idaho
+169.76	        Torque Bound
+168.72	        Dogma Family
+165.77	        Pelican Comforts
+164.75	        Goodfellas Salute
+162.79	        Fool Mockingbird
+160.72	        Apache Divine
+159.75	        Enemy Odds
+159.73	        Cat Coneheads
+158.79	        Scorpion Apollo
+158.77	        Range Moonwalker
+157.71	        Scalawag Duck
+155.78	Sunrise League
