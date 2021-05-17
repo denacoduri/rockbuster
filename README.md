@@ -3,4 +3,4 @@ Rockbuster Stealth LLC is a fictional movie rental company that used to have sto
 
 The data set has been provided by [CareerFoundry](https://careerfoundry.com/).
 
-[Total Payments and Customer Counts by Country Visualization in Tableau](https://public.tableau.com/profile/denacoduri#!/vizhome/RockbusterProjectExample/map)
+[Total Payments and Customer Counts by Country - A Visualization in Tableau](https://public.tableau.com/profile/denacoduri#!/vizhome/RockbusterProjectExample/map)
