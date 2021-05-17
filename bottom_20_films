@@ -1,0 +1,40 @@
+A SQL query to find the bottom 20 films by total payments.
+
+
+QUERY:
+
+SELECT SUM(amount) AS total_payments, D.title AS film_name	
+	
+FROM payment A	
+INNER JOIN rental B ON A.rental_id = B.rental_id	
+INNER JOIN inventory C ON B.inventory_id = C.inventory_id	
+INNER JOIN film D ON C.film_id = D.film_id	
+	
+GROUP BY D.title	
+ORDER BY SUM(amount) ASC	
+LIMIT 20	
+	
+	
+OUTPUT:  
+  
+total_payments	film_name
+5.94	          Oklahoma Jumanji
+5.94	          Texas Watch
+5.94	          Duffel Apocalypse
+5.95	          Freedom Cleopatra
+6.93	          Young Language
+6.93	          Rebel Airport
+6.94	          Treatment Jekyll
+6.94	          Cruelty Unforgiven
+7.93	          Lights Deer
+7.94	          Japanese Run
+7.94	          Stallion Sundance
+8.93	          Harold French
+8.93	          Ghostbusters Elf
+8.95	          Connection Microcosmos
+9.93	          Ballroom Mockingbird
+9.94	          Comancheros Enemy
+10.91	          Jawbreaker Brooklyn
+10.91	          Towers Hurricane
+10.93	          Zhivago Core
+10.93	          Maude Mod
