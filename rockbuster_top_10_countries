@@ -1,5 +1,6 @@
 A SQL query to find the top 10 countries in terms of customer numbers:	
 
+
 QUERY:
 
 SELECT D.country,	
