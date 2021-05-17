@@ -1,5 +1,5 @@
 A SQL query to find the top 10 countries in terms of customer numbers:	
-	
+
 	
 SELECT D.country,	
        COUNT(customer_id) AS customer_count	
@@ -9,4 +9,18 @@ INNER JOIN city C ON B.city_id = C.city_id
 INNER JOIN country D ON C.country_ID = D.country_ID	
 GROUP BY country	
 ORDER BY customer_count DESC	
-LIMIT 10	
+LIMIT 10
+
+
+OUTPUT:
+top_10_countries	country	customer_count
+India			60
+China			53
+United States		36
+Japan			31
+Mexico			30
+Brazil			28
+Russian Federation	28
+Philippines		20
+Turkey			15
+Indonesia		14
