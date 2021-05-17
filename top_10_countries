@@ -16,7 +16,7 @@ LIMIT 10
 
 OUTPUT:
 
-top_10_countries	country	customer_count
+country	customer_count
 India			60
 China			53
 United States		36
