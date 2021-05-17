@@ -21,9 +21,9 @@ LIMIT 5
 	
 OUTPUT:
 				
-customer_id	    first_name	  last_name	    country	        city	                amount_paid
-486	            Glen	        Talbert	      Mexico	        Acua	                59.88
-537	            Clinton	      Buford	      United States	  Aurora	              39.92
-175	            Annette	      Olson	        India	          Allappuzha (Alleppey)	39.92
-479	            Zachary	      Hite	        United States	  Akron	                35.96
-367 	          Adam	        Gooch	        India	          Adoni	                34.93
+customer_id	    first_name	  last_name     country	           city	                     amount_paid
+486	            Glen	  Talbert	Mexico	           Acua	                     59.88
+537	            Clinton    	  Buford        United States	   Aurora	             39.92
+175	            Annette	  Olson	        India	           Allappuzha (Alleppey)     39.92
+479	            Zachary	  Hite          United States	   Akron	             35.96
+367 	            Adam	  Gooch	        India	           Adoni	             34.93
