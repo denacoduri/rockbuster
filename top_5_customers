@@ -1,7 +1,7 @@
 A SQL query to find the top 5 customers in the top 10 cities of the top 10 countries:			
 
 
-QUERY:
+QUERY: (with hardcoding)
 
 SELECT A.customer_id, B.first_name, B.last_name, 					
 		E.country, D.city, SUM(A.amount) AS amount_paid   			
@@ -27,3 +27,40 @@ customer_id	    first_name	  last_name     country	           city	             
 175	            Annette	  Olson	        India	           Allappuzha (Alleppey)     39.92
 479	            Zachary	  Hite          United States	   Akron	             35.96
 367 	            Adam	  Gooch	        India	           Adoni	             34.93
+
+
+QUERY: (without hardcoding)
+
+	SELECT A.customer_id, B.first_name, B.last_name, 				
+			E.country, D.city, SUM(A.amount) AS amount_paid   		
+	FROM payment A				
+		INNER JOIN customer B on A.customer_id = B.customer_id			
+		INNER JOIN address C ON B.address_id = C.address_id			
+		INNER JOIN city D ON C.city_id = D.city_id			
+		INNER JOIN country E ON D.country_ID = E.country_ID			
+					
+		WHERE city IN 			
+		(SELECT C.city			
+		FROM customer A			
+		INNER JOIN address B ON A.address_id = B.address_id			
+		INNER JOIN city C ON B.city_id = C.city_id			
+		INNER JOIN country D ON C.country_ID = D.country_ID			
+					
+			WHERE country IN		
+			(SELECT D.country		
+			FROM customer A		
+			INNER JOIN address B ON A.address_id = B.address_id		
+			INNER JOIN city C ON B.city_id = C.city_id		
+			INNER JOIN country D ON C.country_ID = D.country_ID		
+			GROUP BY country		
+			ORDER BY COUNT(customer_id) DESC		
+			LIMIT 10)		
+					
+		GROUP BY city			
+		ORDER BY COUNT(customer_id) DESC, city ASC			
+		LIMIT 10)			
+					
+	GROUP BY A.customer_id, B.first_name, B.last_name, 				
+			E.country, D.city, A.amount		
+	ORDER BY amount_paid DESC				
+	LIMIT 5				
