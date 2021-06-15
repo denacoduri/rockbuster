@@ -1,7 +1,7 @@
 A SQL query to find the top 10 cities within the top 10 countries:		
 		
 		
-QUERY:
+QUERY: (with hardcoding)
 
 SELECT C.city, D.country,		
        COUNT(customer_id) AS customer_count		
@@ -36,3 +36,27 @@ Alvorada	       Brazil	            1
 all the other cities only have 1 customer each, therefore there is no		
 "Top Ten." I have listed the remaining cities after Aurora in alphabetical 		
 order.		
+
+
+QUERY: (without hardcoding)		
+		
+SELECT C.city, D.country,		
+       COUNT(customer_id) AS customer_count		
+FROM customer A		
+     INNER JOIN address B ON A.address_id = B.address_id		
+     INNER JOIN city C ON B.city_id = C.city_id		
+     INNER JOIN country D ON C.country_ID = D.country_ID		
+		
+WHERE country IN		
+          (SELECT D.country		
+          FROM customer A		
+               INNER JOIN address B ON A.address_id = B.address_id		
+               INNER JOIN city C ON B.city_id = C.city_id		
+               INNER JOIN country D ON C.country_ID = D.country_ID		
+          GROUP BY country		
+          ORDER BY COUNT(customer_id) DESC		
+          LIMIT 10)		
+		
+GROUP BY city, country		
+ORDER BY customer_count DESC, city ASC		
+LIMIT 10		
