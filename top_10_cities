@@ -3,6 +3,7 @@ A SQL query to find the top 10 cities within the top 10 countries:
 		
 QUERY: (with hardcoding)
 
+```sql
 SELECT C.city, D.country,		
        COUNT(customer_id) AS customer_count		
 FROM customer A		
@@ -14,7 +15,8 @@ WHERE country IN ('India', 'China', 'United States', 'Japan',
 	 'Philippines', 'Turkey', 'Indonesia')	
 GROUP BY city, country		
 ORDER BY customer_count DESC, city ASC		
-LIMIT 10		
+LIMIT 10
+```
 
 
 OUTPUT:
